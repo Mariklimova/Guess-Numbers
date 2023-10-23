@@ -9,24 +9,53 @@
 // Целые числа; Переменные; Ввод / вывод данных; Условный оператор; Цикл; Бесконечный цикл;
 // Операторы break, continue; Работа с модулем random для генерации случайных чисел; Функции.
 
-let num = Math.round(Math.random() * 100);
 
-function guessNumber(num) {
-    let start = 1;
-    let end = 100;
-    for (let i = start; i < end; i++) {
-        const middle = prompt(`'Введите любое число от '${start}' до '${end}`);
-        if (middle == num) {
-            alert('ПОЗДРВЛЯЮ! ВЫ УГАДАЛИ!');
-            break
-        } else if (middle > num) {
-            end = middle;
-            alert('Слишком много, попробуйте еще раз');
-        } else if (middle < num) {
-            start = middle;
-            alert('Слишком мало, попробуйте еще раз');
+
+// 1
+// let num = Math.round(Math.random() * 100);
+
+// function guessNumber(num) {
+//     let start = 1;
+//     let end = 100;
+//     for (let i = start; i < end; i++) {
+//         const middle = prompt(`'Введите любое число от '${start}' до '${end}`);
+//         if (middle == num) {
+//             alert('ПОЗДРВЛЯЮ! ВЫ УГАДАЛИ!');
+//             break
+//         } else if (middle > num) {
+//             end = middle;
+//             alert('Слишком много, попробуйте еще раз');
+//         } else if (middle < num) {
+//             start = middle;
+//             alert('Слишком мало, попробуйте еще раз');
+//         }
+//     }
+
+// }
+// guessNumber(num);
+
+
+// 2
+class GuessNum {
+    guessNumber(num) {
+        let start = 1;
+        let end = 100;
+        for (let i = start; i < end; i++) {
+            const middle = prompt(`'Введите любое число от '${start}' до '${end}`);
+            if (middle == num) {
+                alert('ПОЗДРВЛЯЮ! ВЫ УГАДАЛИ!');
+                break
+            } else if (middle > num) {
+                end = middle;
+                alert('Слишком много, попробуйте еще раз');
+            } else if (middle < num) {
+                start = middle;
+                alert('Слишком мало, попробуйте еще раз');
+            }
         }
-    }
 
+    }
 }
-guessNumber(num)
+const guessNum = new GuessNum();
+const num = Math.round(Math.random() * 100);
+guessNum.guessNumber(num);
